@@ -1,6 +1,6 @@
 package woopaca.core.member;
 
-public interface MemberService extends MemberRepository {
+public interface MemberService {
 
     void join(Member member);
 
