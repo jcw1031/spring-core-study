@@ -1,7 +1,6 @@
 package woopaca.core.order;
 
 import woopaca.core.discount.DiscountPolicy;
-import woopaca.core.discount.FixDiscountPolicy;
 import woopaca.core.member.Member;
 import woopaca.core.member.MemberRepository;
 import woopaca.core.member.MemoryMemberRepository;
@@ -9,7 +8,7 @@ import woopaca.core.member.MemoryMemberRepository;
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private DiscountPolicy discountPolicy;
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
