@@ -3,12 +3,13 @@ package woopaca.core;
 import woopaca.core.member.Grade;
 import woopaca.core.member.Member;
 import woopaca.core.member.MemberService;
-import woopaca.core.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
 
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+
         Member member = new Member(1L, "woopaca", Grade.VIP);
 
         memberService.join(member);
