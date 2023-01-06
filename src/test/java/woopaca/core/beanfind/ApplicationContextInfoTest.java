@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
 import woopaca.core.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import woopaca.core.member.MemberServiceImpl;
 
 public class ApplicationContextInfoTest {
 
