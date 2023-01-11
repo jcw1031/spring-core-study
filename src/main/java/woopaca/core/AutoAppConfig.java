@@ -1,11 +1,8 @@
 package woopaca.core;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
-import woopaca.core.member.MemberRepository;
-import woopaca.core.member.MemoryMemberRepository;
 
 @Configuration
 @ComponentScan(
@@ -14,8 +11,10 @@ import woopaca.core.member.MemoryMemberRepository;
         )
 )
 public class AutoAppConfig {
-    @Bean(name = "memoryMemberRepository")
+
+    /*@Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository() {
         return new MemoryMemberRepository();
-    }
+    }*/
+
 }

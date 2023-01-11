@@ -1,6 +1,5 @@
 package woopaca.core.order;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import woopaca.core.discount.DiscountPolicy;
 import woopaca.core.member.Member;
@@ -11,7 +10,7 @@ public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
-
+    
     //    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
