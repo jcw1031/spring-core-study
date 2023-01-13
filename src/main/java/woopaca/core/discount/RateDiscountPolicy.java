@@ -1,10 +1,12 @@
 package woopaca.core.discount;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import woopaca.core.member.Grade;
 import woopaca.core.member.Member;
 
 @Component
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private final int DISCOUNT_PERCENT = 10;

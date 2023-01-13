@@ -1,17 +1,21 @@
 package woopaca.core.order;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import woopaca.core.discount.DiscountPolicy;
 import woopaca.core.member.Member;
 import woopaca.core.member.MemberRepository;
 
 @Component
-@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+
+//    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
