@@ -22,11 +22,11 @@ public class AllBeanTest {
 
         DiscountService discountService = ac.getBean(DiscountService.class);
         Member member = new Member(1L, "wooapca", Grade.VIP);
-        int discountPrice = discountService.discout(member, 20000, "fixDiscountPolicy");
+        int discountPrice = discountService.discount(member, 20000, "fixDiscountPolicy");
 
         assertThat(discountPrice).isEqualTo(1000);
 
-        int rateDiscountPrice = discountService.discout(member, 20000, "rateDiscountPolicy");
+        int rateDiscountPrice = discountService.discount(member, 20000, "rateDiscountPolicy");
 
         assertThat(rateDiscountPrice).isEqualTo(2000);
     }
@@ -44,7 +44,7 @@ public class AllBeanTest {
             System.out.println("policyList = " + policyList);
         }
 
-        public int discout(Member member, int price, String discountCode) {
+        public int discount(Member member, int price, String discountCode) {
             DiscountPolicy discountPolicy = policyMap.get(discountCode);
             return discountPolicy.discount(member, price);
         }
